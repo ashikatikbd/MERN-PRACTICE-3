@@ -1,0 +1,81 @@
+node.js is a platform যার মাধ্যমে সার্ভার সাইডের সাথে জাভাস্ক্রিপ্ট কাজ করতে পারে। 
+
+Node.js includes three types of module
+1. core module > node.js এর নিজস্ব module
+2. local module > নিজেরা তৈরী করা module
+3. third party module > অন্যদের তৈরী করা module ( managed by npm)
+
+Some Terms....
+1. module > module import or require & exports
+2. create server
+3. routes
+4. controllers
+5. views
+
+
+core module ...
+http > to create http server
+https > to create https server
+url > TO handle url path
+querystring
+path > To handle File path
+fs > To handle File System
+util
+
+server run করার জন্য file টি commad line এ node + fileName দিয়ে enter press করতে হবে এবং সার্ভারটি আবার off করার জন্য ctrt+c press করতে হবে।
+
+// stringify object থেকে json এ convert করে
+// parse json থেকে object এ conver করে
+
+http protocol 
+req res model
+request ....
+GET()
+POST()
+PUT()
+DELETE()
+
+1. http request through - get(), post(), put(), delete()
+2. request with query parameter -> req.query.parameterName
+ const {name, id} = req.query;
+  res.send(`<h1>Your name is ${name} & is Id is ${id}</h1>`);
+3. request with route parameter -> req.params.parameterName
+router.get('/userID/:id/userName/:name', (req,res) => {
+    const id = req.params.id
+    const name = req.params.name
+    res.send(`name is ${name} ID is ${id}`)
+})
+4. request with header() -> req.header('key')
+5. request with JSON data -> req.body.parameterName
+
+
+response...
+
+status code
+200/404/500
+
+data
+Head
+body
+
+
+Stream & Buffer
+Buffer data types
+ReadStream
+WriteStream
+
+
+middleware is a function where has three parameter (req, res, next() => {})
+such as :
+coonst myMiddleware = (req,res,next()=> {
+    
+})
+
+
+MVC = Model Vivew controllers
+Model = Database কোডগুলো model এর আন্ডারে রাখা হয়
+Vivew = আমরা যা যা দেখতে পাই সেগুলো রাখা হয় Vivew এর মধ্যে। যেমন - index, css, img file etc
+Routes = '/' এগুলোই হল routes
+Controllers = routes এ যাওয়ার পর যে লজিক গুলো নিয়ে কাজ করবে। 
+Controllers = ( connnection point between model and views )
+Controllers = have all the logic
